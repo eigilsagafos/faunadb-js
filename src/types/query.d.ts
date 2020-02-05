@@ -73,7 +73,7 @@ export module query {
     initial: ExprArg,
     collection: ExprArg
   ): Expr
-  export function Paginate(set: ExprArg, opts?: object): Expr
+  export function Paginate(set: ExprArg, opts?: ExprArg | object): Expr
   export function Exists(ref: ExprArg, ts?: ExprArg): Expr
 
   export function Create(collection_ref: ExprArg, params?: ExprArg): Expr
