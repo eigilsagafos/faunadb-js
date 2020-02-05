@@ -2935,7 +2935,11 @@ function wrap(obj) {
  * @private
  */
 function wrapValues(obj) {
-  if (obj !== null) {
+  if (obj === null) {
+    return null
+  } else if (obj instanceof Expr) {
+    return obj
+  } else {
     var rv = {}
 
     Object.keys(obj).forEach(function(key) {
@@ -2943,8 +2947,6 @@ function wrapValues(obj) {
     })
 
     return rv
-  } else {
-    return null
   }
 }
 
